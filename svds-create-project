@@ -1,0 +1,20 @@
+#!/bin/bash
+# Usage: svds-create-project
+
+# Create directory structure in current working directory
+directories='docs
+report
+develop
+data
+source'
+
+for dir_name in ${directories}
+do
+  mkdir $dir_name
+  touch $dir_name/README.md
+  if [ $dir_name = "source" ]; then
+    mkdir -p $dir_name/sql
+  fi
+done
+
+exit 0
